@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      /* position: relative; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #000;
+      font-size: 16px;
+    }
+    h1 {
+      position: relative;
+      color: #222;
+      font-size: 8rem;;
+      letter-spacing: 0.2rem;
+    }
+    h1::after {
+      content: attr(data-message);
+      color: transparent;
+      position: absolute;
+      left: 0;
+      top: 0;
+      clip-path: circle(100px at 0% 50%);
+      animation: move_h1 6s infinite;
+      background: url(./img/img-01.jpg) center center no-repeat; 
+      background-size: 150%;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    @keyframes move_h1 {
+      0%,100% {
+        clip-path: circle(100px at 0% 50%);
+      }
+      50% {
+        clip-path: circle(100px at 100% 50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 data-message="I Love Coding">I Love Coding</h1>
+</body>
+</html>
