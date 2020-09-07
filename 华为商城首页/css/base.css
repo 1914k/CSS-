@@ -1,0 +1,315 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0; vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    color:#a4a4a4;
+    background:#f5f5f5;
+}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a{color:#a4a4a4; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6{text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w {  /*版心 提取 */
+    width: 1200px;
+    margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+
+
+.fl li{
+	float: left;
+}
+.fr li{
+	float: left;
+}
+.shorcut{
+	position: relative;
+	z-index: 1;
+}
+.shorcut li{
+	position: relative;
+	padding: 9px;
+	/*background: #fff;*/
+}
+.shorcut li +li:before{
+	position: absolute;
+	top: 13px;
+	left: -1px;
+	content: "";
+	width: 1px;
+	height: 10px;
+	background: #e4e4e4;
+}
+.shorcut li.more{
+	padding-right: 9px;
+}
+.shorcut li.more a.more:after{
+	position: relative;
+	top: 11px;
+	left: 4px;
+	content: "";
+	width: 0;
+	height: 0;
+	border: 4px solid transparent;
+	border-top-color: #999;
+	border-top-width: 7px;
+}
+.shorcut li.more:hover a.more:after{
+	top: -11px;
+	left: 4px;
+	border: 4px solid transparent;
+	border-bottom-color: #999;
+	border-bottom-width: 7px;
+}
+.shorcut li.more .more-sub{
+	position: absolute;
+	top: 37px;
+	left: -90px;
+	width: 144px;
+	padding: 10px;
+	text-align: center;
+	line-height: 32px;
+	box-shadow: 0 0 5px 0 #ccc;
+	background: #fff;
+	display: none;
+	z-index: -1;
+}
+.shorcut li.more:hover .more-sub,.h-r li.cart:hover .cart-sub{
+	display: block;
+}
+.shorcut li.more:hover ,.h-r li.cart:hover{
+	background: #fff;
+}
+.shorcut li.more:hover,.h-r li.cart:hover {
+	box-shadow:0 5px 5px 0 #fff,0px 0 5px 0 #ccc;
+}
+.shorcut li.more .more-sub .sub-t{
+	padding-bottom: 7px;
+	border-bottom: 1px solid #eaeaea;
+}
+.shorcut li.more .more-sub .sub-code{
+	margin-top: 22px;
+}
+.shorcut li.more .more-sub a{
+	color: #3a3a3a;
+}
+.shorcut li.more .more-sub a:hover{
+	color: #ca141d;
+}
+.h-r li.cart i{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../images/icon-common.png)no-repeat;
+	vertical-align: middle;
+	padding-right: 8px;
+}
+.h-r li.cart .cart-sub{
+	position: absolute;
+	top: 38px;
+	right: 0px;
+	width: 462px;
+	padding: 50px 0;
+	text-align: center;
+	background: #fff;
+	box-shadow: 0 0 5px #ccc;
+	display: none;
+	z-index: -1;
+}
+.h-r li.cart .cart-sub img{
+	padding-bottom: 12px;
+}
+
+/*bottomlogo部分 start*/
+.bottom{
+	width: 100%;
+	margin-top: 65px;
+	background: #f0f0f0;
+}
+.bottom .flogo{
+	padding: 46px 0;
+	background: #f0f0f0;
+	border-top: 1px solid #eee;
+}
+.bottom .flogo li{
+	float: left;
+	width: 300px;
+	height: 47px;
+	line-height: 47px;
+	font-size: 18px;
+}
+.bottom .flogo li a{
+	color: #333;
+}
+.bottom .flogo li i{
+	display: inline-block;
+	width: 47px;
+	height: 48px;
+	background: url(../images/icon-common.png);
+	vertical-align: middle;
+	margin-right: 18px;
+}
+.bottom .flogo li i.s1{
+	background-position: 0 -151px;
+}
+.bottom .flogo li i.s2{
+	background-position: -47px -151px;
+}
+.bottom .flogo li i.s3{
+	background-position: -94px -151px;
+}
+.bottom .flogo li i.s4{
+	background-position: -141px -151px;
+}
+/*bottomlogo部分 end*/
+
+/*bottom服务部分 start*/
+.bottom .services{
+	border-top: 1px solid #e8e8e8;
+	padding: 30px 0 20px;
+}
+.bottom .services .service1{
+	width: 945px;
+	line-height: 24px;
+}
+.bottom .services .service1 dl {
+    width: 16.66667%;
+}
+.line{
+	width: 22px;
+	height: 2px;
+	background: #a8a8a8;
+	margin-bottom: 10px;
+}
+.bottom .services .service1 dl dt{
+	font-size: 14px;
+}
+.bottom .services .service1 dl dt a{
+	color: #3a3a3a;
+}
+.bottom .services .service1 dl{
+	float: left;
+}
+.bottom .services .service1 dl dd a{
+	color: #666;
+}
+.bottom .services .service1 dl dd a:hover{
+	color: #ce2a30;
+}
+.service2{
+	padding-left: 40px;
+	margin-top: 2px;
+	border-left: 1px solid #ebebeb;
+}
+.service2 p.phone{
+	font-size: 20px;
+	color: #3a3a3a;
+}
+.service2 p.hotline{
+	color: #666;
+}
+.service2 .kefu,.service2 .jubao{
+	width: 161px;
+	height: 35px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background: #fff;
+	line-height: 35px;
+	text-align: center;
+}
+.service2 .kefu i,.service2 .jubao i{
+	display: inline-block;
+	width: 24px;
+	height: 20px;
+	vertical-align: middle;
+	background: url(../images/icon2.png)
+}
+.service2 p{
+	margin-top: 10px;
+}
+.service2 p.line{
+	margin-top: 0;
+}
+.service2 p a{
+	font-size: 14px;
+	color: #900;
+}
+.service2 .kefu i{
+	background-position: -301px 0;
+}
+.service2 .jubao i{
+	width: 20px;
+	background-position: -383px 0;
+}
+/*bottom 服务部分 end*/
+
+.footer{
+	padding: 30px 0 0 0;
+	background: #e6e6e6;
+}
+.logo{
+	width: 80px;
+	height: 34px;
+	margin-right: 40px;
+	line-height: 40px;
+}
+.warn{
+	margin-left: 96px;
+}
+.warn i{
+	display: inline-block;
+	width: 69px;
+	height: 25px;
+}
+.warn i.w1{
+	background: url(../images/footer-warn/w1.png)no-repeat;
+}
+.warn i.w2{
+	background: url(../images/footer-warn/w2.png)no-repeat;
+}
+.warn i.w3{
+	background: url(../images/footer-warn/w3.png)no-repeat;
+}
+.warn i.w4{
+	background: url(../images/footer-warn/w4.jpg)no-repeat;
+}
+.warn i.w5{
+	background: url(../images/footer-warn/w5.jpg)no-repeat;
+}
